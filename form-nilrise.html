@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color:#177bad;
+        }
+        .container{
+            width:500px;
+            margin:30px auto;
+            background:rgb(237, 218, 194);
+            padding:70px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+        h2{
+            text-align:center;
+            color:rgb(5, 92, 38);
+        }
+        label{
+            font-weight:bold;
+        }
+        input[type=text],
+        input[type=email],
+        input[type=password],
+        select,
+        textarea{
+            width:100%;
+            padding:10px;
+            margin-top:5px;
+            margin-bottom:10px;
+            border:3px solid rgb(124, 175, 22);
+            border-radius:50px;
+        }
+        textarea{
+            resize:none;
+        }
+         .top-logo img {
+            max-height: 70px;
+            width: auto;
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+        }
+        .buttons{
+            text-align:center;
+        }
+        input[type=submit]{
+            background:green;
+            color:rgb(21, 13, 1);
+            border:none;
+            padding:10px 20px;
+            border-radius:5px;
+            cursor:pointer;
+        }
+        input[type=reset]{
+            background:red;
+            color:white;
+            border:none;
+            padding:10px 20px;
+            border-radius:5px;
+            cursor:pointer;
+        }
+        input[type=submit]:hover{
+            background:darkgreen;
+        }
+        input[type=reset]:hover{
+            background:darkred;
+        }
+        
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="top-logo">
+                <img src="image.png" alt="Nilrise Logo">
+            </div>
+<h2>Registration Form</h2>
+<form id="myForm">
+<label>Name</label>
+<input type="text" id="name">
+<label>Email</label>
+<input type="email" id="email">
+<label>Phone</label>
+<input type="text" id="phone">
+
+<label>Gender</label><br>
+<input type="radio" name="gender" value="Male"> Male
+<input type="radio" name="gender" value="Female"> Female
+<br><br>
+
+<label>state</label>
+<select id="state">
+    <option value="">Select State</option>
+    <option>Karnataka</option>
+    <option>Andhra Pradesh</option>
+    <option>Telangana</option>
+    <option>Kerala</option>
+    <option>Tamil Nadu</option>
+</select>
+<label>Address</label>
+<textarea id="address" rows="4"></textarea>
+<div class="buttons">
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+    <button class="back-btn" onclick="location.replace('file.html')">← Back to Dashboard</button>
+
+</div>
+</form>
+</div>
+<script>
+document.getElementById("myForm").onsubmit = function(event){
+    event.preventDefault();
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let state = document.getElementById("state").value;
+    let address = document.getElementById("address").value.trim();
+    let gender =
+    document.querySelector('input[name="gender"]:checked');
+    let phone = document.getElementById("phone").value.trim();
+    if(name==""){
+        alert("Please enter Name");
+        document.getElementById('name').focus();
+        return;
+    }
+    if(email==""){
+        alert("Please enter Email");
+        document.getElementById('email').focus();
+        return;
+    }
+    if(phone==""){
+        alert("Please enter Phone Number");
+        document.getElementById('phone').focus();
+        return;
+    }
+    if(!gender){
+        alert("Please select Gender");
+        document.getElementById('gender').focus();
+        return;
+    }
+    if(state==""){
+        alert("Please select state");
+        document.getElementById('state').focus();
+        return;
+    }
+    if(address==""){
+        alert("Please enter Address");
+        document.getElementById('address').focus();
+        return;
+    }
+    alert("Form Submitted Successfully!");
+};S
+
+</script>
+
+</body>
+</html>

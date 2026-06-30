@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dermatological & Skin Care Catalog</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f8f8;
+            color: #333;
+            line-height: 1.5;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3d41;
+            font-size: 2.6rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+
+        h1::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #3a8e9e;
+            margin: 12px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .back-btn {
+            background-color: #1e3d41;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        .back-btn:hover {
+            background-color: #3a8e9e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 14px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #3a8e9e;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #edf4f4;
+            padding-bottom: 8px;
+        }
+
+        .product-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e3d41;
+            padding-right: 10px;
+        }
+
+        .product-tag {
+            display: inline-block;
+            background-color: #eaf4f5;
+            color: #2a6f7c;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .info-section {
+            margin-bottom: 12px;
+            font-size: 0.88rem;
+        }
+
+        .info-title {
+            font-weight: 700;
+            color: #2c5e66;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        .info-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .info-section li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 3px;
+            color: #444;
+        }
+
+        .info-section li::before {
+            content: "•";
+            color: #3a8e9e;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .product-card.image-card {
+            border-top-color: #e67e22;
+            cursor: pointer;
+        }
+
+        .product-card.image-card .product-tag {
+            background-color: #fdf2e9;
+            color: #d35400;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            max-height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 15px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <button class="back-btn" onclick="location.replace('file.html')">← Back to Dashboard</button>
+        
+        <h1>Skin Care & Therapeutics</h1>
+
+        <div class="product-grid">
+            
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-name">Itrazil Dusting Powder</div>
+                    <div class="product-tag">Antifungal</div>
+                </div>
+                <p class="product-desc">Advanced sweat and moisture defense formula.</p>
+                <div class="info-section">
+                    <div class="info-title">Key Advantages</div>
+                    <ul>
+                        <li>Prevents fungal proliferation in high-moisture body folds.</li>
+                        <li>Soathes itching, chafing, and sweat rash instantly.</li>
+                    </ul>
+                </div>
+                <div class="info-section">
+                    <div class="info-title">How to Use</div>
+                    <ul>
+                        <li>Dust cleanly over completely dry, affected areas twice daily.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-name">ScabiFight-G Lotion</div>
+                    <div class="product-tag">Anti-Parasitic</div>
+                </div>
+                <p class="product-desc">Targeted mitigation for scabies and skin mites.</p>
+                <div class="info-section">
+                    <div class="info-title">Key Advantages</div>
+                    <ul>
+                        <li>Eliminates underlying scabies mites and eggs quickly.</li>
+                        <li>Controls secondary superficial skin infections.</li>
+                    </ul>
+                </div>
+                <div class="info-section">
+                    <div class="info-title">How to Use</div>
+                    <ul>
+                        <li>Apply from neck downward. Leave on 8–12 hours, then wash.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-name">Zoyclo-M Plus Cream</div>
+                    <div class="product-tag">Multi-Action</div>
+                </div>
+                <p class="product-desc">Broad spectrum approach for mixed dermatosis.</p>
+                <div class="info-section">
+                    <div class="info-title">Key Advantages</div>
+                    <ul>
+                        <li>Simultaneously treats fungal and bacterial infections.</li>
+                        <li>Reduces severe localized redness and eczema scaling.</li>
+                    </ul>
+                </div>
+                <div class="info-section">
+                    <div class="info-title">How to Use</div>
+                    <ul>
+                        <li>Apply a thin layer gently to target lesions twice every day.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-name">Zoyclo-M Cream</div>
+                    <div class="product-tag">Anti-Inflam</div>
+                </div>
+                <p class="product-desc">Refined steroid-antifungal soothing balance.</p>
+                <div class="info-section">
+                    <div class="info-title">Key Advantages</div>
+                    <ul>
+                        <li>Relieves acute itching from inflammatory skin rashes.</li>
+                        <li>Clears microbial rings without triggering skin thinning.</li>
+                    </ul>
+                </div>
+                <div class="info-section">
+                    <div class="info-title">How to Use</div>
+                    <ul>
+                        <li>Massage gently into the patch until absorbed, once per day.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-name">Ketozit-Plus Cream</div>
+                    <div class="product-tag">Antifungal</div>
+                </div>
+                <p class="product-desc">Deep structural barrier fungal eliminator.</p>
+                <div class="info-section">
+                    <div class="info-title">Key Advantages</div>
+                    <ul>
+                        <li>Directly disrupts fungal cell membrane synthesis.</li>
+                        <li>Highly effective for persistent jock itch and ringworm.</li>
+                    </ul>
+                </div>
+                <div class="info-section">
+                    <div class="info-title">How to Use</div>
+                    <ul>
+                        <li>Apply to the infection site plus 1-inch of surrounding skin.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-name">Zoybec-C Cream</div>
+                    <div class="product-tag">Antibacterial</div>
+                </div>
+                <p class="product-desc">First-aid defense layer for surface abrasions.</p>
+                <div class="info-section">
+                    <div class="info-title">Key Advantages</div>
+                    <ul>
+                        <li>Blocks superficial bacteria from settling in open cuts.</li>
+                        <li>Accelerates clean tissue closure with minimal scarring.</li>
+                    </ul>
+                </div>
+                <div class="info-section">
+                    <div class="info-title">How to Use</div>
+                    <ul>
+                        <li>Cleanse the minor wound first, then smooth on a small amount.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-name">Metafresh (Mouth Wash)</div>
+                    <div class="product-tag">Oral Care</div>
+                </div>
+                <p class="product-desc">Antiseptic rinse for complete oral hygiene.</p>
+                <div class="info-section">
+                    <div class="info-title">Key Advantages</div>
+                    <ul>
+                        <li>Rapidly reduces painful aphthous mouth ulcers.</li>
+                        <li>Neutralizes sulfur-producing bacteria causing bad breath.</li>
+                    </ul>
+                </div>
+                <div class="info-section">
+                    <div class="info-title">How to Use</div>
+                    <ul>
+                        <li>Swish 10ml around oral cavity for 30 seconds, then spit. Do not swallow.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-name">Viroglin-400</div>
+                    <div class="product-tag">Antiviral Oral</div>
+                </div>
+                <p class="product-desc">Systemic antiviral management tablet.</p>
+                <div class="info-section">
+                    <div class="info-title">Key Advantages</div>
+                    <ul>
+                        <li>Shortens the duration of painful outbreaks like shingles.</li>
+                        <li>Diminishes systemic viral shedding patterns.</li>
+                    </ul>
+                </div>
+                <div class="info-section">
+                    <div class="info-title">How to Use</div>
+                    <ul>
+                        <li>Take with a full glass of water exactly at timed intervals.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card image-card" onclick="location.replace('file.html')">
+                <div class="product-header">
+                    <div class="product-name">Moromax Cream</div>
+                    <div class="product-tag">Featured Repair</div>
+                </div>
+                <p class="product-desc">Premium advanced deep skin tissue structural recovery.</p>
+                <div class="info-section">
+                    <div class="info-title">Key Advantages</div>
+                    <ul>
+                        <li>Locks hydration into hyper-dry skin barriers.</li>
+                        <li>Tap card to explore clinical feedback maps.</li>
+                    </ul>
+                </div>
+                <div class="info-section">
+                    <div class="info-title">How to Use</div>
+                    <ul>
+                        <li>Smooth liberally onto target areas directly after bathing.</li>
+                    </ul>
+                </div>
+                <img src="image copy.png" alt="Moromax Cream Preview">
+            </div>
+            
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-name">Fusimark Cream</div>
+                    <div class="product-tag">Topical Antibiotic</div>
+                </div>
+                <p class="product-desc">Targeted cream for follicular and surface infections.</p>
+                <div class="info-section">
+                    <div class="info-title">Key Advantages</div>
+                    <ul>
+                        <li>Penetrates deep skin structures to address impetigo.</li>
+                        <li>Stops harmful bacterial protein synthesis safely.</li>
+                    </ul>
+                </div>
+                <div class="info-section">
+                    <div class="info-title">How to Use</div>
+                    <ul>
+                        <li>Apply cleanly 3 to 4 times a day depending on instructions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-name">ScabiFight Soap</div>
+                    <div class="product-tag">Medicated Bar</div>
+                </div>
+                <p class="product-desc">Medicated companion full body hygiene bar.</p>
+                <div class="info-section">
+                    <div class="info-title">Key Advantages</div>
+                    <ul>
+                        <li>Helps wash away persistent skin mites mechanically.</li>
+                        <li>Soothes angry dermis layers while cleansing.</li>
+                    </ul>
+                </div>
+                <div class="info-section">
+                    <div class="info-title">How to Use</div>
+                    <ul>
+                        <li>Work into a rich lather during baths. Leave on 2 mins before rinsing.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-name">Mupizit Ointment</div>
+                    <div class="product-tag">Ointment</div>
+                </div>
+                <p class="product-desc">Highly stable localized bacterial eradication gel.</p>
+                <div class="info-section">
+                    <div class="info-title">Key Advantages</div>
+                    <ul>
+                        <li>Eradicates nasal colonization of pathogenic bacteria.</li>
+                        <li>Forms a thick protective seal over open traumatic lesions.</li>
+                    </ul>
+                </div>
+                <div class="info-section">
+                    <div class="info-title">How to Use</div>
+                    <ul>
+                        <li>Apply a small bead via cotton swab directly to target zone.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="back-btn" onclick="location.replace('file.html')">← Back to Dashboard</button>
+
+    </div>
+
+</body>
+</html>
