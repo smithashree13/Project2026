@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Antibiotics Info</title>
+    <style>
+        
+        * {
+            box-sizing: border-box;
+            margin: 2;
+            padding: 10;
+            border-radius: 50px;
+        }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #dadbe5;
+            color: #554747;
+            line-height: 1.6;
+        }
+
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: rgb(249, 241, 241);
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .back-btn {
+            background-color: #e74c3c;
+            color: rgb(22, 17, 1);
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .back-btn:hover {
+            background-color: #c48e23;
+        }
+
+        
+        article {
+            background: rgb(213, 222, 187);
+            border-radius: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 5px;
+            margin-bottom: 25px;
+            border-left: 5px solid #3498db;
+        }
+
+        article h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 5px;
+        }
+
+        article p {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        
+        .side-note {
+            background-color: #fcf8e3;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+
+        footer {
+            background-color: #1a252f;
+            color: #95a5a6;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="top">
+        <h1>General Antibiotics</h1>
+        <p>A guide to common bacterial medications</p>
+    </header>
+
+    <main class="container">
+        <button class="back-btn" onclick="location.replace('file.html')">← Back</button>
+
+        <article id="cefixime">
+            <h2>Cefixime 200 mg</h2>
+            <p><strong>Cefixime</strong> tablets are used for the treatment of various bacterial infections, including urinary tract infections, tonsillitis, pharyngitis, and chest or lung infections. It is occasionally prescribed post-surgery to prevent infection.</p>
+            <p>As a cephalosporin antibiotic, it works by stopping the growth of bacteria. It is vital to note that it is effective only against bacterial infections and will not work against viral conditions like the flu.</p>
+        </article>
+
+        <article id="amoxicillin">
+            <h2>Amoxicillin 200 mg</h2>
+            <p>Amoxicillin is a penicillin-type antibiotic that fights bacteria and inhibits their growth. It serves as a generic form of the brand-name drug Amonil-CV KID. It is widely prescribed to treat infections of the tonsils, lungs (pneumonia), ears, throat, skin, or urinary tract.</p>
+            <p>Sometimes paired with other medications to treat stomach ulcers, doctors leverage it against sensitive bacterial strains like <em>E. coli</em>, <em>Staphylococcus</em>, <em>Streptococcus</em>, and <em>H. influenzae</em>. It offers no therapeutic value against viral colds or flus.</p>
+            
+            <div class="side-note">
+                <strong>Common Side Effects:</strong> Stomach pain, headache, nausea, vomiting, diarrhea, weakness, joint pain, facial swelling, skin reactions, or cough.
+            </div>
+        </article>
+
+        <article id="linezolid">
+            <h2>Linezolid 600 mg</h2>
+            <p>Linezolid is a specialized antibiotic utilized to treat serious bacterial infections by preventing microbial replication. Linezolid belongs to the MAO inhibitor class of drugs. Unnecessary use of this strong antibiotic can build microbial resistance, rendering it ineffective for future treatments.</p>
+            <p>Adult dosages are typically spaced 12 hours apart, with or without food. For children, the medication is usually administered every 8 hours, explicitly tailored to their age and body weight.</p>
+            
+            <div class="side-note">
+                <strong>Side Effects & Precautions:</strong> Potential symptoms include headaches, drowsiness, rapid breathing, dizziness, or diarrhea. Prior to use, notify your practitioner regarding histories of high blood pressure, thyroid issues, bone marrow conditions, or any tumors.
+            </div>
+        </article>
+
+        <button class="back-btn" onclick="location.replace('file.html')">← Back</button>
+
+  
+    </main>
+
+    <footer>
+        <p>&copy; 2026 . All rights reserved.</p>
+        <p>
+            <input type="button" value="Contact Us" onclick="location.replace('file.html')"> | 
+            <a href="#top">Back to Top</a>
+        </p>
+    </footer>
+
+</body>
+</html>

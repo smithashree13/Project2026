@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nilrise Pharma Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #fccc9f;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #1e293b;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-bar {
+            background-color: #c8d2e9;
+            color: #f1f5f9;
+            padding: 10px 20px;
+            font-size: 13px;
+        }
+        
+        .top-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .top-logo img {
+            max-height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        .top-contact {
+            display: flex;
+            gap: 20px;
+        }
+
+        .top-contact span i {
+            color: #38bdf8;
+            margin-right: 6px;
+        }
+
+        .main-header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 20px;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #475569;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #9cbaca;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 6px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary { background-color: #0284c7; color: white; }
+        .btn-primary:hover { background-color: #0369a1; }
+        .btn-secondary { background-color: #64748b; color: white; }
+        .btn-secondary:hover { background-color: #475569; }
+        .btn-danger { background-color: #ef4444; color: white; }
+        .btn-danger:hover { background-color: #dc2626; }
+
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: 25px auto;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            height: 400px;
+        }
+
+        .mySlides {
+            display: none;
+            height: 100%;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            width: 100%;
+            padding: 30px 20px 20px 20px;
+            box-sizing: border-box;
+        }
+        
+        .slide-caption h3 { margin: 0 0 5px 0; font-size: 22px; }
+        .slide-caption p { margin: 0; font-size: 14px; color: #cbd5e1; }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0,0,0,0.3);
+            text-decoration: none;
+        }
+        .next { right: 0; border-radius: 3px 0 0 3px; }
+        .prev:hover, .next:hover { background-color: rgba(0,0,0,0.7); }
+
+        .main-layout {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .form{
+            background: #c8d2e9;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            align: right;
+
+        }
+        .content-card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+
+        .content-card h2 {
+            margin-top: 0;
+            color: #0f172a;
+            font-size: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        .category-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+       
+        .styled-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+
+        .styled-list li {
+            margin-bottom: 10px;
+        }
+
+        .styled-list a {
+            color: #334155;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 15px;
+            border-radius: 6px;
+            background: #f8fafc;
+            transition: all 0.2s;
+            border-left: 3px solid transparent;
+        }
+
+        .styled-list a:hover {
+            color: #0284c7;
+            background: #f0f9ff;
+            border-left-color: #0284c7;
+            padding-left: 18px;
+        }
+
+        address {
+            font-style: normal;
+            line-height: 1.8;
+            color: #475569;
+        }
+
+        .sidebar-widget {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 15px;
+            border-top: 4px solid #0284c7;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+        .whatsapp-float:hover { transform: scale(1.08); }
+
+        #date {
+            margin: 15px 0;
+            font-weight: 600;
+            color: #0284c7;
+            min-height: 24px;
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+
+        footer a { color: #f1f5f9; text-decoration: none; margin: 0 10px; }
+        footer a:hover { color: #38bdf8; }
+        footer p { margin: 15px 0 0 0; }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="top-container">
+            <div class="top-logo">
+                <img src="image.png" alt="Nilrise Logo">
+            </div>
+            <div class="top-contact">
+                <span><i class="fas fa-phone"></i> +91 9972549725</span>
+                <span><i class="fas fa-envelope"></i> vaibhavakrishna95@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <nav class="nav-links">
+                <a href="https://www.nilrisepharma.com/" class="active">Home</a>
+                <a href="https://www.nilrisepharma.com/">About Us</a>
+                <a href="https://www.nilrisepharma.com/">Products</a>
+                <a href="https://www.nilrisepharma.com/">Our Networks</a>
+                <a href="https://www.nilrisepharma.com/">Contact</a>
+            </nav>
+            <div>
+                <button type="button" class="btn btn-secondary" onclick="location.reload()">Refresh</button>
+                <button type="button" class="btn btn-danger" onclick="location.replace('login.html')">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcTU2JgJzU2sN10xXIPard5ixE-uy3iyAHkz7HtGYn0Nn4FZHIlfv3dlB00XV-TshQzOIaQ6td5L4W3c0pU" alt="Manufacturing Plant">
+            <div class="slide-caption">
+                <h3>State-of-the-Art Manufacturing</h3>
+                <p>Ensuring global safety standards across all manufacturing phases.</p>
+            </div>
+        </div>
+
+        <div class="mySlides">
+            <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQn5E_oNbT1-RI-_80WXwqfWHGY697ISGEfL0zm3_5nC7LfJNWl_t_H2fjX4VITq5oemTjYCOV42zffmyU" alt="Quality Analysis">
+            <div class="slide-caption">
+                <h3>Advanced Testing & Compliance</h3>
+                <p>Strict quality control loops monitoring compound stability and purity.</p>
+            </div>
+        </div>
+
+        <div class="mySlides">
+            <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSedffZ768iWRwpSMx8PnzWR9M9FkHhUBhIoANd8G3lRBUly-ThBZsPxf4kt3YvPEQDo-xldA43gTCZ_Rw" alt="R&D Lab">
+            <div class="slide-caption">
+                <h3>Innovative R&D Pipelines</h3>
+                <p>Developing effective therapeutic treatments for target healthcare domains.</p>
+            </div>
+        </div>
+
+        <div class="mySlides">
+            <img src="Screenshot 2026-06-10 223207.png">
+        </div>
+
+        <div class="mySlides">
+            <img src="Screenshot 2026-06-10 223408.png">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <main class="main-layout">
+        
+        <div class="left-column">
+            <div class="content-card">
+                <h2>Product Segment Classifications</h2>
+                <p>Select a pharmaceutical division below to view specific catalogs and inventory items:</p>
+                <div class="category-buttons">
+                    <button type="button" class="btn btn-primary" onclick="location.replace('skin.html')">Dermatology (Skin)</button>
+                    <button type="button" class="btn btn-primary" onclick="location.replace('fileA.html')">General Antibiotics</button>
+                    <button type="button" class="btn btn-primary" onclick="location.replace('covid-19.html')">COVID-19 Care</button>
+                </div>
+            </div>
+
+            <div class="form">
+                    <h2><B>Doctor</B></h2>
+                   <p>if u want to contact doctor, please fill the form:</p>
+                   <button type="button" class="btn btn-primary" onclick="location.replace('form-nilrise.html')">Contact Doctor</button>
+                   <p>after filling the form, you will be contacted by the doctor.</p>
+                </div>
+
+
+        <div class="sidebar-column">
+            <div id="contactus" class="content-card">
+                <h2>Inquiries & Feedback</h2>
+                <p>Reach out to our administrative support desk regarding technical issues or procurement queries:</p>
+                
+                <address>
+                    <strong>Contact Personnel:</strong> VAIBHAVA KRISHNA S K<br>
+                    <strong>Direct Line:</strong> +91 8310081645<br>
+                    <strong>Institution:</strong> Amity University, Bengaluru<br>
+                    <strong>Email:</strong> <a href="mailto:vaibhavakrishna95@gmail.com">mail.us</a>
+                </address>
+
+                <div class="sidebar-widget">
+                    <div class="top-contact" style="flex-direction: column; gap: 8px; color: #334155;">
+                        <span><i class="fas fa-phone"></i> +91 8310081645</span>
+                        <span><i class="fas fa-envelope"></i> vaibhavakrishna95@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+      
+    </main>
+
+   
+
+    <footer>
+        <a href="#contactus">Contact Support Deck</a> | 
+        <a href="#">Back to Window Top</a>
+        <p>&copy; 2026 Semantic HTML Layouts & Nilrise Pharma. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        setInterval(function() {
+            plusSlides(1);
+        }, 5000);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slides[slideIndex-1].style.display = "block";  
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
